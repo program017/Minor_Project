@@ -7,4 +7,4 @@ python retrain.py \
   --output_graph=tf_files/retrained_graph.pb \
   --output_labels=tf_files/retrained_labels.txt \
   --image_dir=training_dataset
-echo Training finished
+read -sp "Training finished"

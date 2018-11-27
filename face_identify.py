@@ -11,7 +11,11 @@ face_cascade = cv2.CascadeClassifier(clsf_path)
 path = cwd + "/images"
 flist = os.listdir(path)
 valid_exts = [".jpg",".gif",".png",".tga", ".jpeg"]
+count1=0
+count2=0
 for f in flist:
+    count1+=1
+    print(f,count1)
     if os.path.splitext(f)[1].lower() not in valid_exts:
         os.remove(path+"/"+f)
     else:
@@ -22,17 +26,10 @@ for f in flist:
         faces = face_cascade.detectMultiScale(img_gray)
         #print(f+" "+str(len(faces)))
         if len(faces)==1:
+            count2+=1
             pass
         else:
             os.remove(path+"/"+f)
-#print("done")
 
-def ploting():
-    # PLOT
-    plt.imshow(img_gray, cmap=plt.get_cmap("gray"))
-    ca = plt.gca()
-    for face in faces:
-        ca.add_patch(Rectangle((face[0], face[1]), face[2], face[3]
-                               , fill=None, alpha=1, edgecolor='red'))
-    plt.title("Face detection with Viola-Jones")
-    plt.show()
+
+print("Kept: ",count2," Deleted: ",count1-count2)

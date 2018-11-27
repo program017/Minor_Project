@@ -52,18 +52,36 @@ female={}
 female['anne hathaway']=0
 female['kate winslet']=0
 female['scarlett johanasson']=0
+female['Emma Stone']=0
+female['Jennifer Lawrence']=0
 male={}
 male['benedict cumberbatch']=0
 male['leonardo dicaprio']=0
 male['matthew mcconaughey']=0
+male['ryan gosling']=0
+male['ryan renolds']=0
+male['jake gyllenhaal']=0
 male['robert downey jr']=0
 for i in final:
         if i in male:
-                male[i]=final[i]
+                male[i]=final[i]*100
         else:
-                female[i]=final[i]
+                female[i]=final[i]*100
 mx=0
 ind=0
+tot=0
+for i in male:
+        tot+=male[i]
+
+for i in male:
+        male[i]=float(male[i])/float(tot)*100
+tot=0
+for i in female:
+        tot+=female[i]
+
+for i in female:
+        female[i]=float(female[i])/float(tot)*100
+        
 for i in male:
         if mx==0 and ind==0:
                 mx=male[i]
