@@ -41,6 +41,7 @@ for loc in flist:
         else:
             result[human_string]=score
     sess.close()
+    #print(result)
         #print('%s (score = %.5f)' % (human_string, score))
 #print(result)
 final={}
@@ -49,19 +50,25 @@ for i in result:
         #print(result[i])
 #print(final)
 female={}
-female['anne hathaway']=0
-female['kate winslet']=0
+#female['anne hathaway']=0
+#female['kate winslet']=0
 female['scarlett johanasson']=0
-female['Emma Stone']=0
-female['Jennifer Lawrence']=0
+female['emma stone']=0
+#female['jennifer lawrence']=0
+female['elizabeth oslen']=0
 male={}
+male['anthony mackie']=0
+male['don cheadle']=0
+male['jeremy renner']=0
+male['sebastian stan']=0
 male['benedict cumberbatch']=0
 male['leonardo dicaprio']=0
-male['matthew mcconaughey']=0
+#male['matthew mcconaughey']=0
 male['ryan gosling']=0
-male['ryan renolds']=0
-male['jake gyllenhaal']=0
+#male['ryan renolds']=0
+#male['jake gyllenhaal']=0
 male['robert downey jr']=0
+male['chris evans']=0
 for i in final:
         if i in male:
                 male[i]=final[i]*100
